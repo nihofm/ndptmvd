@@ -1,16 +1,33 @@
 # Neural Denoising for Path Tracing of Medical Volumetric Data
 
-Source code for the paper "Neural Denoising for Path Tracing of Medical Volumetric Data"
+Auxiliary source material for our HPG'20 paper "Neural Denoising for Path Tracing of Medical Volumetric Data": https://doi.org/10.1145/3406181
 
-## Build
+## Overview
 
-Setup virtual python environment:
+We transfer machine learning techniques previously applied to denoising surface-only Monte
+Carlo renderings to path-traced visualizations of medical volumetric data. In the domain of medical imaging,
+path-traced videos turned out to be an efficient means to visualize and understand internal structures, in
+particular for less experienced viewers such as students or patients. However, the computational demands for
+the rendering of high-quality path-traced videos are very high due to the large number of samples necessary for
+each pixel. To accelerate the process, we present a learning-based technique for denoising path-traced videos
+of volumetric data by increasing the sample count per pixel; both through spatial (integrating neighboring
+samples) and temporal filtering (reusing samples over time). Our approach uses a set of additional features and
+a loss function both specifically designed for the volumetric case. Furthermore, we present a novel network
+architecture tailored for our purpose, and introduce reprojection of samples to improve temporal stability
+and reuse samples over frames. As a result, we achieve good image quality even from severely undersampled
+input images.
+
+![miniteaser](miniteaser.jpg)
+
+## Setup
+
+Setup a virtual python environment:
 
     virtualenv -p python3 env
     source env/bin/activate
     pip3 install -r requirements.txt
  
-## Train:
+## Train
 
 Single autoencoder architecture:
 
@@ -30,16 +47,15 @@ Dual autoencoder architecture with temporal reprojection:
 
 Additional command line arguments are listed in the beginning of each source file.
   
-## Denoise:
+## Denoise
 
     python src/denoise.py /path/to/model.pt /path/to/data/noisy /path/to/data/clean
   
 Additional command line arguments are listed in the beginning of the source file.
   
-## Pretrained models
+## Pretrained Models
 
-Pretrained models for all configurations are available at models/*.pt.
-To load a model into pytorch or access the weights:
+Pretrained models for all configurations are available at models/*.pt. To load a model into pytorch or access the weights:
 
     cd src/
     python3
