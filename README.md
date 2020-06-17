@@ -39,7 +39,7 @@ Additional command line arguments are listed in the beginning of the source file
 ## Pretrained models
 
 Pretrained models for all configurations are available at models/*.pt.
-To load a model into pytorch or access to the weights:
+To load a model into pytorch or access the weights:
 
     cd src/
     python3
