@@ -77,7 +77,7 @@ def _load_image_internal(filename, load_features=True):
     if load_features:
         # test if additional data available
         root, ext = os.path.splitext(filename)
-        root = root.replace(ext, '') # fix double extension fuckup
+        root = root.replace(ext, '') # fix double extension error
         img = _concat_feature_map(img, root + '_pos' + ext)
         img = _concat_feature_map(img, root + '_norm' + ext)
         img = _concat_feature_map(img, root + '_alb' + ext)
