@@ -39,14 +39,13 @@ Additional command line arguments are listed in the beginning of the source file
 ## Pretrained models
 
 Pretrained models for all configurations are available at models/*.pt.
-To load a model into pytorch or gain access to the weights:
+To load a model into pytorch or access to the weights:
 
     cd src/
-    python
+    python3
     >>> import torch
     >>> import models
     >>> torch.load('../models/single_color_only.pt').state_dict()
-
   
 ## Data Layout
 
@@ -65,7 +64,7 @@ For each stored frame under /path/to/data/clean the following data is expected:
   
   
 For temporal reprojection, each noisy frame is additionally expected to provide:
-  - \<Frame\>_pos.dat: high-precision primary scatter positions
+  - \<Frame\>_pos.dat: binary high-precision primary scatter positions
   - \<Frame\>_matrices.txt: three 4x4 floating point matrices (model, view, proj), i.e. 12 rows with 4 IEE plaintext floats each
 
-Files are recursively globbed and then sorted alphanumerically, thus file names do not need to match exactly between noisy and clean data, just required to sort into the same order.
+File names are recursively globbed and then sorted alphanumerically, thus file names do not need to match exactly between noisy and clean data, just required to sort into the same order.
