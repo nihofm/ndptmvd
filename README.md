@@ -84,3 +84,7 @@ For temporal reprojection, each noisy frame is additionally expected to provide:
   - \<Frame\>_matrices.txt: three 4x4 floating point matrices (model, view, proj), i.e. 12 rows with 4 IEE plaintext floats each
 
 File names are recursively globbed and then sorted alphanumerically, thus file names do not need to match exactly between noisy and clean data, just required to sort into the same order.
+
+## Dataset
+
+Unfortunately, due to their medical nature and data protection laws, it is not possible for us to publish the training datasets. We plan to extend this repository by a freely available dataset.
