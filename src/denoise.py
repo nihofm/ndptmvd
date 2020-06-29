@@ -39,7 +39,7 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # setup model
-    model = models.load(args.model)
+    model = torch.load(args.model, map_location=device)
     model.eval()
     model.to(device)
     # model = torch.nn.DataParallel(model)
