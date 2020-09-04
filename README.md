@@ -1,6 +1,6 @@
 # Neural Denoising for Path Tracing of Medical Volumetric Data
 
-Auxiliary source material for our HPG'20 paper "Neural Denoising for Path Tracing of Medical Volumetric Data": https://doi.org/10.1145/3406181
+Auxiliary source material for our HPG'20 paper "Neural Denoising for Path Tracing of Medical Volumetric Data": https://dl.acm.org/doi/abs/10.1145/3406181
 
 ## Overview
 
